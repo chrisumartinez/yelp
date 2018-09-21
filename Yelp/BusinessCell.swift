@@ -26,16 +26,18 @@ class BusinessCell: UITableViewCell {
         addressLabel.text = business.address
         categoriesLabel.text = business.categories
         distanceLabel.text = business.distance
-        reviewsCountLabel.text = business.reviewCount!.stringValue
+        reviewsCountLabel.text = business.reviewCount!.stringValue + " Reviews"
         
         //        get the image from URL::
         thumbImageView.setImageWith(business.imageURL!)
-        reviewImageView.image = business.ratingImage
+        reviewImageView.image = business.ratingImage 
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        thumbImageView.layer.cornerRadius = 3
         // Initialization code
     }
 

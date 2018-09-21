@@ -18,7 +18,6 @@ class BusinessesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
                 self.businesses = businesses
