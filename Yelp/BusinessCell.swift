@@ -26,9 +26,12 @@ class BusinessCell: UITableViewCell {
         addressLabel.text = business.address
         categoriesLabel.text = business.categories
         distanceLabel.text = business.distance
-        reviewsCountLabel.text = business.reviewCount as? String
+        reviewsCountLabel.text = business.reviewCount!.stringValue
         
-    }
+        //        get the image from URL::
+        thumbImageView.setImageWith(business.imageURL!)
+        reviewImageView.image = business.ratingImage
+        }
     }
     
     override func awakeFromNib() {
