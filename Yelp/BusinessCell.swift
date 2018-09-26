@@ -20,9 +20,10 @@ class BusinessCell: UITableViewCell {
     @IBOutlet weak var categoriesLabel: UILabel!
     
     
+    
     var business : Business! {
     didSet{
-        nameLabel.text = business.name
+         nameLabel.text = business.name
         addressLabel.text = business.address
         categoriesLabel.text = business.categories
         distanceLabel.text = business.distance
@@ -38,7 +39,13 @@ class BusinessCell: UITableViewCell {
         super.awakeFromNib()
         
         thumbImageView.layer.cornerRadius = 3
-        // Initialization code
+        thumbImageView.clipsToBounds = true        // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
